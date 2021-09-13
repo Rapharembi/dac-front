@@ -1,0 +1,27 @@
+<mat-tab-group mat-align-tabs="start" style="padding-top: 40px; padding-left: 2%; padding-right: 2%;">
+    <mat-tab label="Volumes">
+        <div fxLayout="column" fxLayoutAlign="space-around center" style="padding: 2%">
+            <ng-container *ngFor="let volume of volumes" style="margin: 0.5%;">
+                <mat-card class="mat-card-volume" fxFlex= "0 1 calc(33.3% - 11px)">
+                    <mat-card-title class="mat-card-title-volume">
+                        <div class="row">
+                            <p>
+                            <span fxFlex="50" fxLayoutAlign="start center">{{volume.sigla}}</span>
+                            <span fxFlex></span>
+                            <span fxFlex="40" fxLayoutAlign="end center">{{volume.data}}</span>
+                            </p>
+                        </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                      <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                      </p>
+                    </mat-card-content>
+                   </mat-card>
+                  
+            </ng-container>>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
