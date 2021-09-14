@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Editar Autor </h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="autorPutForm">
+       
+        <mat-form-field class="example-full-width">
+            <mat-label>ID</mat-label>
+            <input matInput placeholder="" formControlName="id" name="id">
+        </mat-form-field>
+       
+        <mat-form-field class="example-full-width">
+            <mat-label>Primeiro Nome</mat-label>
+            <input matInput placeholder="" formControlName="primNome" name="primNome">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nome do Meio</mat-label>
+            <input matInput placeholder="" formControlName="meioNome" name="meioNome">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Último Nome</mat-label>
+          <input matInput placeholder="" formControlName="ultiNome" name="ultiNome">
+      </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+          <mat-label>Afiliação em Inglês</mat-label>
+          <input matInput placeholder="" formControlName="afiliacaoIng" name="afiliacaoIng">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Afiliação em Português</mat-label>
+          <input matInput placeholder="" formControlName="afiliacaoPt" name="afiliacaoPt">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="" formControlName="email" name="email">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>OrcID</mat-label>
+            <input matInput placeholder="" formControlName="orcID" name="orcID">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>País</mat-label>
+            <input matInput placeholder="" formControlName="pais" name="pais">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Ordem no Artigo</mat-label>
+            <input matInput placeholder="" formControlName="ordemArtigo" name="ordemArtigo">
+        </mat-form-field>
+    </form>
+    </div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="updateAutor()">Adicionar</button>
+ </div>
+

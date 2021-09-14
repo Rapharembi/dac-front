@@ -1,0 +1,125 @@
+<mat-tab-group mat-align-tabs="start" style="padding-top: 40px; padding-left: 2%; padding-right: 2%;">
+    <mat-tab label="Volumes">
+        <div fxLayout="column" fxLayoutAlign="space-around center" style="padding: 2%">
+            <ng-container *ngFor="let volume of volumes" style="margin: 0.5%;">
+                <mat-card class="mat-card-eventos" fxFlex= "0 1 calc(33.3% - 11px)">
+                    <mat-card-title class="mat-card-title-eventos">
+                        <div class="row">
+                            <p>
+                            <span fxFlex="80" fxLayoutAlign="start start" style="font-size: 1.2rem;">{{volume.sigla}}</span>
+                            <span fxFlex></span>
+                            <span fxFlex="10" fxLayoutAlign="end end" style="font-size: 1rem; white-space: nowrap;">{{volume.data}}</span>
+                            </p>
+                            </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                      <div class="column" style="text-align: center;">
+                        <p>
+                        <span class="span-eventos-content">Id: {{volume.id}}</span>
+                        <span class="span-eventos-content">Edição: {{volume.edicao}}</span>
+                        <span class="span-eventos-content">Cidade: {{volume.cidade}}</span>
+                        <span class="span-eventos-content">Descrição: {{volume.descPt}}</span>
+                        <span class="span-eventos-content">Description: {{volume.descIng}}</span>
+                        <span class="span-eventos-content">Artigos:</span>    
+                        </p>
+                        <div *ngFor="let artigo of (volume.artigos)">
+                        
+                            <span class="span-eventos-content">Titulo: {{artigo.tituloOriginal}}</span>
+                            <span class="span-eventos-content">Title: {{artigo.tituloIng}}</span>
+                            <span class="span-eventos-content">Idioma: {{artigo.idioma}}</span>
+                            <span class="span-eventos-content">Palavras-chave: {{artigo.pchavePt}}</span>
+                            <span class="span-eventos-content">Keywords: {{artigo.pchaveIng}}</span>
+                            <span class="span-eventos-content">Páginas: {{artigo.quantidadePaginas}}</span>
+                            <span class="span-eventos-content">Resumo: {{artigo.resumoPt}}</span>
+                            <span class="span-eventos-content">Abstract: {{artigo.resumoIng}}</span>
+                            <span class="span-eventos-content">Autores:</span>
+                                <div *ngFor="let autor of (artigo.autores)"> 
+                                    <span class="span-eventos-content">Nome: {{autor.primNome}} {{autor.meioNome}} {{autor.ultiNome}}</span>
+                                    <span class="span-eventos-content">Afiliacao: {{autor.afiliacaoPt}}</span>
+                                    <span class="span-eventos-content">Affiliation: {{autor.afiliacaoIng}}</span>
+                                    <span class="span-eventos-content">Email: {{autor.email}}</span>
+                                    <span class="span-eventos-content">ORCID: {{autor.orcID}}</span>
+                                    <span class="span-eventos-content">País: {{autor.pais}}</span>
+                                </div>
+                        </div>
+                      </div>
+                
+                 
+                    </mat-card-content>
+                    <button  style="margin: 2px; ;" mat-raised-button (click)="updateVolume(volume.id)"><mat-icon>edit</mat-icon>Volume</button>
+                    <button  style="margin: 2px; ;" mat-raised-button  (click)="deleteVolume(volume.id)"><mat-icon>delete </mat-icon>Volume</button>
+                   </mat-card>
+            </ng-container>
+        </div>
+    </mat-tab>
+    <mat-tab label="Artigos">
+        <div fxLayout="column" fxLayoutAlign="space-around center" style="padding: 2%">
+            <ng-container *ngFor="let artigo of artigos" style="margin: 0.5%;">
+                <mat-card class="mat-card-eventos" fxFlex= "0 1 calc(33.3% - 11px)">
+                    <mat-card-title class="mat-card-title-eventos">
+                        <div class="row">
+                            <p style="text-align: center;">
+                            <span style="font-size: 1.2rem; text-align: center;">{{artigo.tituloOriginal}}</span>
+                            <span fxFlex></span>
+                           </p>
+                            </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                      <div class="column" style="text-align: center;">
+                        <span class="span-eventos-content">ID: {{artigo.id}}</span>
+                            <span class="span-eventos-content">Titulo: {{artigo.tituloOriginal}}</span>
+                            <span class="span-eventos-content">Title: {{artigo.tituloIng}}</span>
+                            <span class="span-eventos-content">Idioma: {{artigo.idioma}}</span>
+                            <span class="span-eventos-content">Palavras-chave: {{artigo.pchavePt}}</span>
+                            <span class="span-eventos-content">Keywords: {{artigo.pchaveIng}}</span>
+                            <span class="span-eventos-content">Páginas: {{artigo.quantidadePaginas}}</span>
+                            <span class="span-eventos-content">Resumo: {{artigo.resumoPt}}</span>
+                            <span class="span-eventos-content">Abstract: {{artigo.resumoIng}}</span>
+                            <span class="span-eventos-content">Autores:</span>
+                                <div *ngFor="let autor of (artigo.autores)"> 
+                                    <span class="span-eventos-content">Nome: {{autor.primNome}} {{autor.meioNome}} {{autor.ultiNome}}</span>
+                                    <span class="span-eventos-content">Afiliacao: {{autor.afiliacaoPt}}</span>
+                                    <span class="span-eventos-content">Affiliation: {{autor.afiliacaoIng}}</span>
+                                    <span class="span-eventos-content">Email: {{autor.email}}</span>
+                                    <span class="span-eventos-content">ORCID: {{autor.orcID}}</span>
+                                    <span class="span-eventos-content">País: {{autor.pais}}</span>
+                                </div>
+                        </div>
+                     </mat-card-content>
+                     <button  style="margin: 2px; ;" mat-raised-button (click)="updateArtigo(artigo.id)"><mat-icon>edit</mat-icon>Artigo</button>
+                    <button  style="margin: 2px; ;" mat-raised-button (click)="deleteArtigo(artigo.id)"><mat-icon>delete</mat-icon>Artigo</button>
+                   </mat-card>
+            </ng-container>
+        </div>
+    </mat-tab>
+    <mat-tab label="Autores">
+        <div fxLayout="column" fxLayoutAlign="space-around center" style="padding: 2%">
+            <ng-container *ngFor="let autor of autores" style="margin: 0.5%;">
+                <mat-card class="mat-card-eventos" fxFlex= "0 1 calc(33.3% - 11px)">
+                    <mat-card-title class="mat-card-title-eventos">
+                        <div class="row">
+                            <p>
+                            <span fxFlex="80" fxLayoutAlign="center center" style="font-size: 1.2rem;">{{autor.primNome}} {{autor.meioNome}} {{autor.ultiNome}}</span>
+                            <span fxFlex></span>
+                           </p>
+                            </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                     <span class="span-eventos-content">ID: {{autor.id}}</span>
+                     <span class="span-eventos-content">Nome: {{autor.primNome}} {{autor.meioNome}} {{autor.ultiNome}}</span>
+                     <span class="span-eventos-content">Afiliacao: {{autor.afiliacaoPt}}</span>
+                     <span class="span-eventos-content">Affiliation: {{autor.afiliacaoIng}}</span>
+                     <span class="span-eventos-content">Email: {{autor.email}}</span>
+                     <span class="span-eventos-content">ORCID: {{autor.orcID}}</span>
+                     <span class="span-eventos-content">País: {{autor.pais}}</span>
+                     <span class="span-eventos-content">Ordem no Artigo: {{autor.ordemArtigo}}</span>
+                     </mat-card-content>
+                     <button  style="margin: 2px; ;" mat-raised-button (click)="updateAutor(autor.id)"><mat-icon>edit</mat-icon>Autor</button>
+                    <button  style="margin: 2px; ;" mat-raised-button (click)="deleteAutor(autor.id)"><mat-icon>delete</mat-icon>Autor</button>
+                   </mat-card>
+            </ng-container>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+
+    

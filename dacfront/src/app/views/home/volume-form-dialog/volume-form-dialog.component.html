@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Novo Volume </h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="volumeForm">
+       
+        <mat-form-field class="example-full-width">
+            <mat-label>Cidade</mat-label>
+            <input matInput placeholder="" formControlName="cidade" name="cidade">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Edição</mat-label>
+            <input matInput placeholder="" formControlName="edicao" name="edicao">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Descrição em inglês</mat-label>
+            <input matInput placeholder="" formControlName="descIng" name="descIng">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Descrição em português</mat-label>
+            <input matInput placeholder="" formControlName="descPt" name="descPt">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Data</mat-label>
+            <input matInput placeholder="" formControlName="data" name="data">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Sigla</mat-label>
+            <input matInput placeholder="" formControlName="sigla" name="sigla">
+        </mat-form-field>
+    </form>
+    </div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="createVolume()">Adicionar</button>
+ </div>
+

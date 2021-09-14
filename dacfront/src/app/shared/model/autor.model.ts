@@ -1,4 +1,4 @@
-export class Autor{
+export interface Autor{
     afiliacaoIng:	string;
     afiliacaoPt:	string;
     email:	string;

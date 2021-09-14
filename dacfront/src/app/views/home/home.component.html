@@ -2,7 +2,10 @@
      <mat-toolbar-row style="font-size: 1.5rem ; height: 80px;">
       <span>Eventos Científicos<mat-icon>home</mat-icon></span>
       <span class="example-spacer"></span>
-      <button mat-raised-button><mat-icon>add</mat-icon>Volume</button>
+      <button style="margin: 2px;" mat-raised-button (click)="addVolume()"><mat-icon>add</mat-icon>Volume</button>
+      <button style="margin: 2px;" mat-raised-button (click)="addArtigo()"><mat-icon>add</mat-icon>Artigo</button>
+      <button  style="margin: 2px; ;" mat-raised-button (click)="addAutor()"><mat-icon>add</mat-icon>Autor</button>
       </mat-toolbar-row>
   </mat-toolbar>
-  <app-volume-list></app-volume-list>
+  <app-eventos-list></app-eventos-list>
+ 

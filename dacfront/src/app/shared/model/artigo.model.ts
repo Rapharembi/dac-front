@@ -1,6 +1,6 @@
 import { Autor } from "./autor.model";
 
-export class Artigo{
+export interface Artigo{
     autores: Autor[];
     id:	number;
     idioma:	string;

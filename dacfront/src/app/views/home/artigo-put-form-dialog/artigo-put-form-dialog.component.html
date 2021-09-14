@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>Editar Artigo </h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="artigoPutForm">
+       
+        <mat-form-field class="example-full-width">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="" formControlName="id" name="id">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Autores</mat-label>
+            <input matInput placeholder="" formControlName="autores" name="autores">
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>Idioma</mat-label>
+            <input matInput placeholder="" formControlName="idioma" name="idioma">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Ordem no Volume</mat-label>
+            <input matInput placeholder="" formControlName="ordemVolume" name="ordemVolume">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Palavras-chave em inglês</mat-label>
+            <input matInput placeholder="" formControlName="pchaveIng" name="pchaveIng">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Palavras-chave em português</mat-label>
+            <input matInput placeholder="" formControlName="pchavePt" name="pchavePt">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Quantidade de Páginas</mat-label>
+            <input matInput placeholder="" formControlName="quantidadePaginas" name="quantidadePaginas">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Título em Inglês</mat-label>
+            <input matInput placeholder="" formControlName="tituloIng" name="tituloIng">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Título Original</mat-label>
+            <input matInput placeholder="" formControlName="tituloOriginal" name="tituloOriginal">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Resumo em Inglês</mat-label>
+            <input matInput placeholder="" formControlName="resumoIng" name="resumoIng">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Resumo em Português</mat-label>
+            <input matInput placeholder="" formControlName="resumoPt" name="resumoPt">
+        </mat-form-field>
+    </form>
+    </div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="updateArtigo()">Adicionar</button>
+ </div>
+

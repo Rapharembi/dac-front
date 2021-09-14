@@ -7,7 +7,7 @@ import { Volume } from '../model/volume.model';
 @Injectable({ providedIn: 'root' })
 export class VolumeService {
 
-    apiUrl = 'http://localhost:8080/api/volume';
+    apiUrl = 'http://localhost:8080/api/volume/';
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
@@ -21,5 +21,19 @@ export class VolumeService {
     public getVolumes(): Observable<Volume[]> {
        return this.httpClient.get<Volume[]>(this.apiUrl);
         
+    }
+
+    public postVolumes(volume: any): Observable<Volume>{
+      return this.httpClient.post<any>(this.apiUrl, volume, this.httpOptions);
+    }
+
+    public updateVolumes(volume: any): Observable<Volume>{
+      return this.httpClient.put<any>(this.apiUrl, volume, this.httpOptions);
+    }
+
+    public deleteVolumes (id: number) {
+      this.httpClient.delete(this.apiUrl+ id).subscribe(data => {
+        console.log(data);
+      });
     }
   }

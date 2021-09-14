@@ -1,6 +1,6 @@
 import { Artigo } from "./artigo.model";
 
-export class Volume{
+export interface Volume{
 artigos: Artigo[];
 cidade:	string;
 data:	string;
